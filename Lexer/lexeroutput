@@ -1,0 +1,117 @@
+0	keyword	input
+1	grouping symbol	(
+2	user-defined name	x
+3	grouping symbol	)
+4	grouping symbol	;
+5	user-defined name	num
+6	assignment operator	=
+7	user-defined name	x
+8	grouping symbol	;
+9	user-defined name	res
+10	assignment operator	=
+11	short string	"unknown"
+12	grouping symbol	;
+13	user-defined name	str
+14	assignment operator	=
+15	short string	"even"
+16	grouping symbol	;
+17	user-defined name	checknumber
+18	grouping symbol	;
+19	keyword	if
+20	grouping symbol	(
+21	keyword	eq
+22	grouping symbol	(
+23	user-defined name	res
+24	grouping symbol	,
+25	user-defined name	str
+26	grouping symbol	)
+27	grouping symbol	)
+28	keyword	then
+29	grouping symbol	{
+30	keyword	output
+31	grouping symbol	(
+32	user-defined name	str
+33	grouping symbol	)
+34	grouping symbol	}
+35	keyword	else
+36	grouping symbol	{
+37	keyword	output
+38	grouping symbol	(
+39	user-defined name	res
+40	grouping symbol	)
+41	grouping symbol	}
+42	grouping symbol	;
+43	keyword	halt
+44	grouping symbol	;
+45	keyword	proc
+46	user-defined name	checknumber
+47	grouping symbol	{
+48	user-defined name	n
+49	assignment operator	=
+50	user-defined name	num
+51	grouping symbol	;
+52	user-defined name	y
+53	assignment operator	=
+54	integer	0
+55	grouping symbol	;
+56	keyword	if
+57	grouping symbol	(
+58	grouping symbol	(
+59	user-defined name	n
+60	comparison symbol	<
+61	user-defined name	y
+62	grouping symbol	)
+63	grouping symbol	)
+64	keyword	then
+65	grouping symbol	{
+66	user-defined name	n
+67	assignment operator	=
+68	keyword	mult
+69	grouping symbol	(
+70	user-defined name	n
+71	grouping symbol	,
+72	integer	-1
+73	grouping symbol	)
+74	grouping symbol	}
+75	grouping symbol	;
+76	keyword	while
+77	grouping symbol	(
+78	grouping symbol	(
+79	user-defined name	n
+80	comparison symbol	>
+81	user-defined name	y
+82	grouping symbol	)
+83	grouping symbol	)
+84	grouping symbol	{
+85	user-defined name	n
+86	assignment operator	=
+87	keyword	sub
+88	grouping symbol	(
+89	user-defined name	n
+90	grouping symbol	,
+91	integer	2
+92	grouping symbol	)
+93	grouping symbol	}
+94	grouping symbol	;
+95	keyword	if
+96	grouping symbol	(
+97	keyword	eq
+98	grouping symbol	(
+99	user-defined name	n
+100	grouping symbol	,
+101	user-defined name	y
+102	grouping symbol	)
+103	grouping symbol	)
+104	keyword	then
+105	grouping symbol	{
+106	user-defined name	res
+107	assignment operator	=
+108	short string	"even"
+109	grouping symbol	}
+110	keyword	else
+111	grouping symbol	{
+112	user-defined name	res
+113	assignment operator	=
+114	short string	"odd"
+115	grouping symbol	}
+116	grouping symbol	}
