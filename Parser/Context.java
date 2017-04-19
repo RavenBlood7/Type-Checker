@@ -1,3 +1,5 @@
+package parser;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -30,7 +32,7 @@ public class Context
 	// 50 columns 
 	public Context () {
 		//Use this row header to determine next state
-		char rowStuff [] = {'(', ')', ',', '0', '1', ';', '<', '=', '>', 'a', 'b', 'd', 'e', 'f', 'h', 'i', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'w', 'z', '{', '}', '$', 'A', 'B', 'C', 'D', 'I', 'L', 'N', 'O', 'P', 'Q', 'R','S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+		char rowStuff [] = {'(', ')', ',', ';', '<', '=', '>', 'a', 'b', 'd', 'e', 'f', 'h', 'i', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'w', 'z', '{', '}', '$', 'A', 'B', 'C', 'D', 'I', 'L', 'N', 'O', 'P', 'Q', 'R','S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 		rowHeader = rowStuff; 
 		
 		//This business parses the file and gets the rows (numbered the same as in JFLAP and columns)

@@ -1,10 +1,14 @@
-import java.io.File;
+package parser;
+
+import java.io.*;
 import java.io.FileNotFoundException;
 import java.util.*;
+import lexer.*;
 
 public class Parser
 {
 	private Context context; 
+	private InfoTable table;
 
 
 	private TokenList lexerList; 
@@ -18,7 +22,7 @@ public class Parser
 
 	public Parser () {
 		//This lexeroutput file is from the example.spl file in this directory 
-		lexerList = new TokenList("../lexeroutput"); 
+		lexerList = new TokenList("lexeroutput"); 
 		list = convertToParseFormat(lexerList);
 		//System.out.println(list);
 
@@ -31,6 +35,8 @@ public class Parser
 		nodeStack = new Stack<TreeNode>();
 		context = new Context();
 		bigCounter = 0;
+		
+		table = new InfoTable();
 	} 
 
 	private Queue<Character> convertToParseFormat(TokenList list){ 
@@ -164,9 +170,11 @@ public class Parser
 	
 	public Boolean parse()
 	{
-		lexerList = new TokenList("../lexeroutput"); 		
+		System.out.println("Starting parsing process: ");
+		
+		lexerList = new TokenList("lexeroutput"); 		
 		list = convertToParseFormat(lexerList);
-		lexerList = new TokenList("../lexeroutput"); 
+		lexerList = new TokenList("lexeroutput"); 
 		lexerList.addToken(bigCounter++, "eof", "$");
 		list.add('$');
 		
@@ -179,9 +187,9 @@ public class Parser
 		TreeNode tmpNode;
 ///////////////////
 //System.out.println("In Parse: before remove. lexerlist is " + lexerList);				
-		TokenNode curToken = lexerList.removeFromHead();
-		TreeNode curNode = new TreeNode(bigCounter++, curToken.tokenClass, curToken.snippet);//change 0 to ID
-		nodeStack.push(curNode);
+		TokenNode curToken;// = lexerList.removeFromHead();
+		TreeNode curNode;// = new TreeNode(bigCounter++, curToken.tokenClass, curToken.snippet);//change 0 to ID
+		//nodeStack.push(curNode);
 		
 		while (true)
 		{
@@ -261,7 +269,8 @@ System.out.println("\t where stackpeek is " + Integer.parseInt(stack.peek()));
 			}
 		}
 		
-		
+		System.out.println("--------------------------------------------------- ");
+		System.out.println("File passed parsing phase ");		
 		return true; 
 	}	
 	
@@ -480,5 +489,55 @@ System.out.println("\t where stackpeek is " + Integer.parseInt(stack.peek()));
 	public void prune()
 	{
 		if (root != null) root.prune();
+	}
+	
+	public void writeToTreeFile()
+	{
+		try
+		{
+			parse();
+			String pTree = "ParseTree";
+			Scanner scan = new Scanner(System.in);
+			FileWriter fw = new FileWriter(pTree);
+			fw.write(toString());
+			System.out.println("Parse Tree saved to file '" + pTree + "\n---------------------------------------------'");
+			scan.close();
+			fw.close(); 		
+		}
+		catch (IOException e)
+		{
+			System.out.println("Error writing ParseTree file");
+		}
+	}
+	
+	public void writeToPrunedTreeFile()
+	{
+		try
+		{
+			FileWriter fw = new FileWriter("PrunedParseTree");	
+			Scanner scan = new Scanner(System.in);		
+			prune();
+			String pTree = "PrunedParseTree";
+			scan = new Scanner(System.in);
+			fw = new FileWriter(pTree);
+			fw.write(toString());
+			System.out.println("Pruned Parse Tree saved to file '" + pTree + "\n---------------------------------------------'");
+			scan.close();
+			fw.close();
+		}
+		catch (IOException e)
+		{
+			System.out.println("Error writing ParseTree file");
+		}
+	}
+	
+	public TreeNode getRoot()
+	{
+		return root;
+	}
+	
+	public InfoTable getTable()
+	{
+		return table;
 	}
 }

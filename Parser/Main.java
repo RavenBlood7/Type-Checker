@@ -1,3 +1,5 @@
+import lexer.Lexer;
+//dimport parser.*;
 import java.io.*;
 import java.util.Scanner;
 
@@ -14,6 +16,7 @@ public class Main
 		}
 		System.out.println(tl);
 	}*/ 
+		Lexer l= new Lexer("test1.spl");
 		Parser prsr = new Parser();
 		
 		if(prsr.parse()) {

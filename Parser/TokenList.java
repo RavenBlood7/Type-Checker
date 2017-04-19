@@ -1,3 +1,5 @@
+package parser;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -88,7 +90,7 @@ public class TokenList
 		}
 		catch (NumberFormatException e)
 		{
-			System.out.println("error creating linked list from file");
+			System.out.println("error creating linked list from file: " + fileName);
 		}
 	}
 	
