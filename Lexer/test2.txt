@@ -1,4 +1,0 @@
-
-
-num = x;
-res = "unknown"

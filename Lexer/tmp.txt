@@ -1,3 +1,0 @@
-for(x = 0; x < y ; n = add(n,1)){
-output(hi);
-}

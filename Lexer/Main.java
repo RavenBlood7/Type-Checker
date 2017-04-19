@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.Scanner;
+import lexer.*;
 
 public class Main
 {
@@ -23,7 +24,7 @@ public class Main
 		*/
 		
 	//testing context
-		Context c1 = new Context();
+		//Context c1 = new Context();
 		/*//getCharIndex
 		System.out.println("a: " + c1.getCharIndex('a'));
 		System.out.println("z: " + c1.getCharIndex('z'));
@@ -38,7 +39,7 @@ public class Main
 		*/
 		
 		//getNextState
-		int curstate = 0;
+		//int curstate = 0;
 			//integers		
 			/*System.out.println("integer: " + c1.getNextState(curstate, '-'));
 			System.out.println("integer: " + c1.getNextState(curstate, '1'));
@@ -109,14 +110,14 @@ public class Main
 				Lexer lex = new Lexer(args[0]);
 				//System.out.print(lex);
 
-				String file = "../lexeroutput";
-				Scanner scan = new Scanner(System.in);
+				//~ String file = "../lexeroutput";
+				//~ Scanner scan = new Scanner(System.in);
 
-				FileWriter fw = new FileWriter(file);
-				fw.write(lex.toString());
-				System.out.println("Lexical Analysis output saved to file '"+ file +"'");
-				scan.close();
-				fw.close();
+				//~ FileWriter fw = new FileWriter(file);
+				//~ fw.write(lex.toString());
+				//~ System.out.println("Lexical Analysis output saved to file '"+ file +"'");
+				//~ scan.close();
+				//~ fw.close();
 			}
 			
 

@@ -1,3 +1,5 @@
+package lexer;
+
 public class Context
 {
 	private int transitionTable[][];

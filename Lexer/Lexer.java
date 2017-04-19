@@ -1,3 +1,6 @@
+package lexer;
+
+import java.io.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -8,8 +11,9 @@ public class Lexer
 	private TokenList lst = new TokenList();
 	//So this baby has to take in input
 	public Lexer (String splFile) {
+		
+		System.out.println("Starting lexing process: ");
 		context = new Context();
-
 		File file = new File(splFile);
 
 	    try {
@@ -115,11 +119,37 @@ public class Lexer
         	}
 	        
 	        sc.close();
+		System.out.println("--------------------------------------------------- ");
+		System.out.println("File passed lexing phase ");
+		toFile();
 	    } 
 	    catch (FileNotFoundException e) {
-	        e.printStackTrace();
+	        //e.printStackTrace();
+		    
+			System.out.println("Error opening file: " + splFile);
+			System.out.println("..are you sure it exists?");
 	    }
 	};
+	
+	public void toFile()
+	{
+		try
+		{
+			String file = "lexeroutput";
+			Scanner scan = new Scanner(System.in);
+
+			FileWriter fw = new FileWriter(file);
+			fw.write(toString());
+			System.out.println("Lexical Analysis output saved to file '"+ file +"\n---------------------------------------------'");
+			scan.close();
+			fw.close();		
+		}
+		catch (IOException e)
+		{
+			//e.printStackTrace();
+			System.out.println("Error opening file: lexeroutput");
+		}
+	}
 
 	public String toString() {
 		return lst.toString();
