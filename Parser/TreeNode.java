@@ -1,14 +1,14 @@
 package parser;
 
-import java.util.*; 
-import lexer.TokenNode; 
+import java.util.*;
+import lexer.TokenNode;
 
 
 public class TreeNode extends TokenNode {
 	private LinkedList<TreeNode> children;
 	private TreeNode parent;
 	private InfoTable tableEntry;
-	
+	private char type; //
 
 	public TreeNode(int number, String tokenClass, String snippet) {
 		super(number, tokenClass, snippet);
@@ -18,60 +18,64 @@ public class TreeNode extends TokenNode {
 	}
 
 	public void addChild(TreeNode node) {
-		node.parent = this; 
+		node.parent = this;
 		children.addFirst(node);
 	}
 
-	//TODO: implement addParent, so that the right hand side of the production can be linked to the left hand side 
-	// Left is parent, right is children 
+	//TODO: implement addParent, so that the right hand side of the production can be linked to the left hand side
+	// Left is parent, right is children
 
 	public LinkedList<TreeNode> getChildren() {
-		return children; 
+		return children;
 	}
-	
+
 	public int childrenSize()
-	{		
+	{
 		return children.size();
 	}
-	
+
 	public TreeNode getChild(int i)
 	{
 		return children.get(i);
 	}
-	
+
+	public String getParent() {
+		return parent.tokenClass;
+	}
+
 	public String toString()
 	{
 		String ret;
 		if (parent != null)
-		ret = "||Node " + tokenNo + "\t" + tokenClass 
+		ret = "||Node " + tokenNo + "\t" + tokenClass
 				+ "\t" + snippet + " Parent: " + parent.tokenClass + "||";
-		else 
-		ret = "||Node " + tokenNo + "\t" + tokenClass 
-				+ "\t" + snippet + " Parent: nun||";	
+		else
+		ret = "||Node " + tokenNo + "\t" + tokenClass
+				+ "\t" + snippet + " Parent: nun||";
 		return ret;
 	}
-		
+
 	public void prune()
 	{
 		for (int i = 0; i < children.size(); i++)
 		{
-			if 	(children.get(i).snippet.equals("{") || 
-				children.get(i).snippet.equals("}") || 
-				children.get(i).snippet.equals("(") || 
-				children.get(i).snippet.equals(")") || 
-				children.get(i).snippet.equals(";") || 
+			if 	(children.get(i).snippet.equals("{") ||
+				children.get(i).snippet.equals("}") ||
+				children.get(i).snippet.equals("(") ||
+				children.get(i).snippet.equals(")") ||
+				children.get(i).snippet.equals(";") ||
 				children.get(i).snippet.equals(",") )
 			{
 				children.remove(i);
 				i = 0;
 			}
 		}
-		
+
 		for (int i = 0; i < children.size(); i++)
 		{
 			children.get(i).prune();
 		}
-	
+
 	}
-	
+
 }

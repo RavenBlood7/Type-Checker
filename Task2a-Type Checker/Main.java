@@ -14,13 +14,13 @@ public class Main
 				//A Lexer takes in a fileName of the file that needs to be processed.
 				//This is the source file of spl code.
 				//A lexer then throws an error or produces a file called
-				//"lexeroutput" in the directory. This file is ready to be processed 
+				//"lexeroutput" in the directory. This file is ready to be processed
 				//by the parser.
 				Lexer lex = new Lexer(args[0]);
 				///System.out.print(lex);
-				
+
 				//A Parser reads the "lexeroutput" file and produces a syntax tree
-				//which has a root and a infoTable already built in. These two 
+				//which has a root and a infoTable already built in. These two
 				//attributes are accessed as follows:
 				//	prsr.getRoot()
 				//	prsr.getTable()
@@ -30,13 +30,12 @@ public class Main
 					///prsr.writeToTreeFile();
 					///prsr.writeToPrunedTreeFile();
 				}
-				
-				//The resulting tree and table is then passed to the typechecker 
+
+				//The resulting tree and table is then passed to the typechecker
 				//which does the algorithm and displays appropriate messages
-				TypeChecker tc = new TypeChecker();
-				tc.doTypeChecking(prsr.getRoot(), prsr.getTable());
-			}		
-		
+				//TypeChecker tc = new TypeChecker();
+				//tc.doTypeChecking(prsr.getRoot(), prsr.getTable());
+			}
+
 	}
 }
-
