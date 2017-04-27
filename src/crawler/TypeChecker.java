@@ -44,7 +44,7 @@ public class TypeChecker {
 	 * @param table
 	 */
 	private void visitAST(TreeNode node1, InfoTable table){
-		TableItem node = (TableItem) node1;
+	/*	TableItem node = (TableItem) node1;
 		// trivial case
 		if(node == null){ return; }
 
@@ -85,7 +85,7 @@ public class TypeChecker {
 				node.type = validTypes[6]; // booleans
 				table.setType(findIndex(node, table), validTypes[6]);
 			}
-		} */
+		}
 
 		// NVAR Syntactic Category, Symbol: N
 		if(node.tokenClass.equals("N")){
@@ -437,6 +437,7 @@ public class TypeChecker {
 				}
 			}
 		}
+		*/
 	}
 
 	private void reportError(TreeNode node){
@@ -445,6 +446,6 @@ public class TypeChecker {
 
 	private int findIndex(TreeNode node, InfoTable table){
 		TableItem item = new TableItem(node.tokenNo, node.tokenClass, node.snippet);
-		return table.index(item);
+		return 1;//table.index(item);
 	}
 }

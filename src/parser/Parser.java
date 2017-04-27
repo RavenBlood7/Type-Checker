@@ -221,7 +221,7 @@ public class Parser
 			else if (tempString.charAt(0) == 's')
 			{
 ///////////////////
-System.out.println("In Parse: shift " + tempString.substring(1));				
+//System.out.println("In Parse: shift " + tempString.substring(1));
 //System.out.println("\t stack " + stack);				
 //System.out.println("\t curSymbol is " + curSymbol);				
 //System.out.println("\t curState is " + curState);
@@ -244,7 +244,7 @@ System.out.println("In Parse: shift " + tempString.substring(1));
 				int r = RHSymbolNum(production);
 			
 ///////////////////
-System.out.println("In Parse: reduce " + tempString.substring(1));				
+//System.out.println("In Parse: reduce " + tempString.substring(1));
 //System.out.println("\t stack " + stack);				
 //System.out.println("\t curSymbol is " + curSymbol);				
 //System.out.println("\t curState is " + curState);				
@@ -258,19 +258,20 @@ System.out.println("In Parse: reduce " + tempString.substring(1));
 					stack.pop();
 				}
 //////////////////////////
-System.out.println("\t about to push " + context.getState(n, Integer.parseInt(stack.peek())));				
+//System.out.println("\t about to push " + context.getState(n, Integer.parseInt(stack.peek())));
 //System.out.println("\t where curSymbol is " + curSymbol);
-System.out.println("\t where n is " + n);
-System.out.println("\t where stackpeek is " + Integer.parseInt(stack.peek()));		
+//System.out.println("\t where n is " + n);
+//System.out.println("\t where stackpeek is " + Integer.parseInt(stack.peek()));
 //System.out.println("In Parse: list is " + list);			
 				
 				stack.push(context.getState(n, Integer.parseInt(stack.peek())));
 				nodeStack.push(tmpNode);
 			}
 		}
-		
+
 		System.out.println("--------------------------------------------------- ");
-		System.out.println("File passed parsing phase ");		
+		System.out.println("File passed parsing phase ");
+		System.out.println("--------------------------------------------------- ");
 		return true; 
 	}	
 	

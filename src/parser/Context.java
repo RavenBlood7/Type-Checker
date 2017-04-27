@@ -36,7 +36,7 @@ public class Context
 		rowHeader = rowStuff; 
 		
 		//This business parses the file and gets the rows (numbered the same as in JFLAP and columns)
-		File file = new File("parse_table.txt");
+		File file = new File("../parser/parse_table.txt");
 		try {
 			Scanner scan = new Scanner(file);
 			scan.useDelimiter("\n");

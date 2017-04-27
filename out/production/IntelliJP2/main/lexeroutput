@@ -1,0 +1,16 @@
+0	keyword	input
+1	grouping symbol	(
+2	user-defined name	x
+3	grouping symbol	)
+4	grouping symbol	;
+5	user-defined name	num
+6	assignment operator	=
+7	user-defined name	x
+8	grouping symbol	;
+9	user-defined name	res
+10	assignment operator	=
+11	short string	"unknown"
+12	grouping symbol	;
+13	user-defined name	str
+14	assignment operator	=
+15	short string	"even"

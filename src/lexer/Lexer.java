@@ -124,7 +124,7 @@ public class Lexer
 		toFile();
 	    } 
 	    catch (FileNotFoundException e) {
-	        //e.printStackTrace();
+	        e.printStackTrace();
 		    
 			System.out.println("Error opening file: " + splFile);
 			System.out.println("..are you sure it exists?");
