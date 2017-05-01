@@ -1,11 +1,13 @@
-package crawler;
+package type_crawler;
 
 import parser.*;
 public class TableItem extends TreeNode {
     public char type;
+    public int scope;
     public TableItem(int number, String tokenClass, String snippet){
         super(number, tokenClass, snippet);
         type = '\0';
+        scope = -1;
     }
 
     public TableItem getChild(int i)

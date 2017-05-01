@@ -1,4 +1,4 @@
-package crawler;
+package type_crawler;
 
 import parser.*;
 
@@ -15,8 +15,12 @@ public class TypeChecker {
 	};
 
 	public void doTypeChecking(TreeNode node, InfoTable table){
+		System.out.println("\nStarting type checking process: ");
+		System.out.println("--------------------------------------------------- ");
 		initializeTable(node, table);
 		visitAST(node, table);
+		System.out.println("\nSuccessfully completed type checking process: ");
+		System.out.println("--------------------------------------------------- ");
 	}
 
 	/**
@@ -44,7 +48,7 @@ public class TypeChecker {
 	 * @param table
 	 */
 	private void visitAST(TreeNode node1, InfoTable table){
-	/*	TableItem node = (TableItem) node1;
+		TableItem node = (TableItem) node1;
 		// trivial case
 		if(node == null){ return; }
 
@@ -68,7 +72,7 @@ public class TypeChecker {
 				// report an error
 			}
 		}
-
+		/*
 		// short string Syntactic Category, Symbol: s
 		if(node.tokenClass.equals("short string")){
 			if(node.type.equals('\0')){

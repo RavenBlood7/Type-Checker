@@ -170,7 +170,8 @@ public class Parser
 	
 	public Boolean parse()
 	{
-		System.out.println("Starting parsing process: ");
+		System.out.println("\nStarting parsing process: ");
+		System.out.println("--------------------------------------------------- ");
 		
 		lexerList = new TokenList("lexeroutput"); 		
 		list = convertToParseFormat(lexerList);
@@ -269,7 +270,6 @@ public class Parser
 			}
 		}
 
-		System.out.println("--------------------------------------------------- ");
 		System.out.println("File passed parsing phase ");
 		System.out.println("--------------------------------------------------- ");
 		return true; 

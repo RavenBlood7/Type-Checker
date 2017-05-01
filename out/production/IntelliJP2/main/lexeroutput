@@ -3,14 +3,32 @@
 2	user-defined name	x
 3	grouping symbol	)
 4	grouping symbol	;
-5	user-defined name	num
-6	assignment operator	=
+5	keyword	output
+6	grouping symbol	(
 7	user-defined name	x
-8	grouping symbol	;
-9	user-defined name	res
-10	assignment operator	=
-11	short string	"unknown"
-12	grouping symbol	;
-13	user-defined name	str
-14	assignment operator	=
-15	short string	"even"
+8	grouping symbol	)
+9	grouping symbol	;
+10	keyword	for
+11	grouping symbol	(
+12	user-defined name	x
+13	assignment operator	=
+14	integer	0
+15	grouping symbol	;
+16	user-defined name	x
+17	comparison symbol	<
+18	user-defined name	y
+19	grouping symbol	;
+20	user-defined name	x
+21	assignment operator	=
+22	keyword	add
+23	grouping symbol	(
+24	user-defined name	x
+25	grouping symbol	,
+26	integer	1
+27	grouping symbol	)
+28	grouping symbol	)
+29	grouping symbol	{
+30	user-defined name	x
+31	assignment operator	=
+32	integer	1
+33	grouping symbol	}

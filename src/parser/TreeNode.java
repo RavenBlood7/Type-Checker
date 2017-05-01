@@ -6,8 +6,9 @@ import lexer.TokenNode;
 
 public class TreeNode extends TokenNode {
 	protected LinkedList<TreeNode> children;
-	protected TreeNode parent;
+	private TreeNode parent;
 	private InfoTable tableEntry;
+	public  String newName;
 	
 
 	public TreeNode(int number, String tokenClass, String snippet) {
@@ -77,4 +78,5 @@ public class TreeNode extends TokenNode {
 	public TreeNode getParent() {
 		return parent;
 	}
+
 }
