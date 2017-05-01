@@ -8,6 +8,7 @@ public class TreeNode extends TokenNode {
 	protected LinkedList<TreeNode> children;
 	protected TreeNode parent;
 	private InfoTable tableEntry;
+	public char type;
 	
 
 	public TreeNode(int number, String tokenClass, String snippet) {

@@ -14,6 +14,15 @@ public class InfoTable
 		symbols.add(item);
 	}
 
+	public TableItem get(int i){
+		try{
+			TableItem item = symbols.get(i);
+			return item;
+		} catch (Exception e){
+			return null;
+		}
+	}
+
 	public char getType(int ID){
 		try {
 			TableItem item = symbols.get(ID);

@@ -1,5 +1,6 @@
 
 
+import crawler.TypeChecker;
 import lexer.Lexer;
 import parser.Parser;
 import java.io.*;
@@ -35,8 +36,8 @@ public class Main
 
 				//The resulting tree and table is then passed to the typechecker
 				//which does the algorithm and displays appropriate messages
-				//TypeChecker tc = new TypeChecker();
-				//tc.doTypeChecking(prsr.getRoot(), prsr.getTable());
+				TypeChecker tc = new TypeChecker();
+				tc.doTypeChecking(prsr.getRoot(), prsr.getTable());
 			}
 
 	}

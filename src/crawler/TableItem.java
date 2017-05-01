@@ -12,4 +12,8 @@ public class TableItem extends TreeNode {
     {
         return (TableItem) children.get(i);
     }
+
+    public void setChild(TreeNode node){
+        children.add(node);
+    }
 }
