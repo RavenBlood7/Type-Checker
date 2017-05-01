@@ -8,27 +8,11 @@
 7	user-defined name	x
 8	grouping symbol	)
 9	grouping symbol	;
-10	keyword	for
+10	keyword	input
 11	grouping symbol	(
-12	user-defined name	x
-13	assignment operator	=
-14	integer	0
-15	grouping symbol	;
-16	user-defined name	x
-17	comparison symbol	<
-18	user-defined name	y
-19	grouping symbol	;
-20	user-defined name	x
-21	assignment operator	=
-22	keyword	add
-23	grouping symbol	(
-24	user-defined name	x
-25	grouping symbol	,
-26	integer	1
-27	grouping symbol	)
-28	grouping symbol	)
-29	grouping symbol	{
-30	user-defined name	x
-31	assignment operator	=
-32	integer	1
-33	grouping symbol	}
+12	user-defined name	y
+13	grouping symbol	)
+14	grouping symbol	;
+15	user-defined name	x
+16	assignment operator	=
+17	user-defined name	y

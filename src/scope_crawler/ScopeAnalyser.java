@@ -47,6 +47,9 @@ public class ScopeAnalyser {
         // D
         // I
         //// O input() is assigning
+        // A
+        // U
+        // T
         // W
         // L
         // X
@@ -58,6 +61,9 @@ public class ScopeAnalyser {
                 || node.tokenClass.equals("D")
                 || node.tokenClass.equals("I")
                 || node.tokenClass.equals("O")
+                || node.tokenClass.equals("A")
+                || node.tokenClass.equals("U")
+                || node.tokenClass.equals("T")
                 || node.tokenClass.equals("W")
                 || node.tokenClass.equals("L")
                 || node.tokenClass.equals("X")
@@ -70,10 +76,7 @@ public class ScopeAnalyser {
                 recursiveScope(node.getChild(i), table, curScope);
             }
         }
-
-        // A
-        // U
-        // T
+       /*
         if (node.tokenClass.equals("A"))
         {
             TreeNode tempLeft = node.getChild(0).getChild(0).getChild(0);
@@ -86,8 +89,10 @@ public class ScopeAnalyser {
             if (!stable.lookup(tempRight.snippet, table.getType(tempRight.tokenNo)))
                 throw new StringException("assignment failed: undeclared variable: " + tempRight.snippet);
         }
+        */
 
         // Z
+
         if (node.tokenClass.equals("Z"))
         {
             if (node.getChildren().size() == 3)

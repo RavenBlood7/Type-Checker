@@ -1,6 +1,4 @@
 input(x);
 output(x);
-for (x=0;x < y;x=add(x,1)){x = 1;
-if ((x<y))then
-{hee=""}
-}
+input(y);
+x = y

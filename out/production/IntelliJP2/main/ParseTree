@@ -1,61 +1,42 @@
-||Node 123	Q	none Parent: nun||
----||Node 122	P	none Parent: Q||
-------||Node 121	C	none Parent: P||
----------||Node 81	C	none Parent: C||
-------------||Node 71	C	none Parent: C||
----------------||Node 70	I	none Parent: C||
-------------------||Node 69	O	none Parent: I||
----------------------||Node 63	keyword	input Parent: O||
----------------------||Node 64	grouping symbol	( Parent: O||
----------------------||Node 67	V	none Parent: O||
-------------------------||Node 66	S	none Parent: V||
----------------------------||Node 65	user-defined name	x Parent: S||
----------------------||Node 68	grouping symbol	) Parent: O||
-------------||Node 72	grouping symbol	; Parent: C||
-------------||Node 80	I	none Parent: C||
----------------||Node 79	O	none Parent: I||
-------------------||Node 73	keyword	output Parent: O||
-------------------||Node 74	grouping symbol	( Parent: O||
-------------------||Node 77	V	none Parent: O||
----------------------||Node 76	S	none Parent: V||
-------------------------||Node 75	user-defined name	x Parent: S||
-------------------||Node 78	grouping symbol	) Parent: O||
----------||Node 82	grouping symbol	; Parent: C||
----------||Node 120	I	none Parent: C||
-------------||Node 119	Z	none Parent: I||
----------------||Node 83	keyword	for Parent: Z||
----------------||Node 84	grouping symbol	( Parent: Z||
----------------||Node 86	N	none Parent: Z||
-------------------||Node 85	user-defined name	x Parent: N||
----------------||Node 87	assignment operator	= Parent: Z||
----------------||Node 88	integer	0 Parent: Z||
----------------||Node 89	grouping symbol	; Parent: Z||
----------------||Node 91	N	none Parent: Z||
-------------------||Node 90	user-defined name	x Parent: N||
----------------||Node 92	comparison symbol	< Parent: Z||
----------------||Node 94	N	none Parent: Z||
-------------------||Node 93	user-defined name	y Parent: N||
----------------||Node 95	grouping symbol	; Parent: Z||
----------------||Node 97	N	none Parent: Z||
-------------------||Node 96	user-defined name	x Parent: N||
----------------||Node 98	assignment operator	= Parent: Z||
----------------||Node 99	keyword	add Parent: Z||
----------------||Node 100	grouping symbol	( Parent: Z||
----------------||Node 102	N	none Parent: Z||
-------------------||Node 101	user-defined name	x Parent: N||
----------------||Node 103	grouping symbol	, Parent: Z||
----------------||Node 104	integer	1 Parent: Z||
----------------||Node 105	grouping symbol	) Parent: Z||
----------------||Node 106	grouping symbol	) Parent: Z||
----------------||Node 107	grouping symbol	{ Parent: Z||
----------------||Node 117	C	none Parent: Z||
-------------------||Node 116	I	none Parent: C||
----------------------||Node 115	A	none Parent: I||
-------------------------||Node 110	T	none Parent: A||
----------------------------||Node 109	S	none Parent: T||
-------------------------------||Node 108	user-defined name	x Parent: S||
-------------------------||Node 111	assignment operator	= Parent: A||
-------------------------||Node 114	U	none Parent: A||
----------------------------||Node 113	X	none Parent: U||
-------------------------------||Node 112	integer	1 Parent: X||
----------------||Node 118	grouping symbol	} Parent: Z||
+||Node 85	Q	none Parent: nun||
+---||Node 84	P	none Parent: Q||
+------||Node 83	C	none Parent: P||
+---------||Node 72	C	none Parent: C||
+------------||Node 62	C	none Parent: C||
+---------------||Node 52	C	none Parent: C||
+------------------||Node 51	I	none Parent: C||
+---------------------||Node 50	O	none Parent: I||
+------------------------||Node 44	keyword	input Parent: O||
+------------------------||Node 45	grouping symbol	( Parent: O||
+------------------------||Node 48	V	none Parent: O||
+---------------------------||Node 47	S	none Parent: V||
+------------------------------||Node 46	user-defined name	x Parent: S||
+------------------------||Node 49	grouping symbol	) Parent: O||
+---------------||Node 53	grouping symbol	; Parent: C||
+---------------||Node 61	I	none Parent: C||
+------------------||Node 60	O	none Parent: I||
+---------------------||Node 54	keyword	output Parent: O||
+---------------------||Node 55	grouping symbol	( Parent: O||
+---------------------||Node 58	V	none Parent: O||
+------------------------||Node 57	S	none Parent: V||
+---------------------------||Node 56	user-defined name	x Parent: S||
+---------------------||Node 59	grouping symbol	) Parent: O||
+------------||Node 63	grouping symbol	; Parent: C||
+------------||Node 71	I	none Parent: C||
+---------------||Node 70	O	none Parent: I||
+------------------||Node 64	keyword	input Parent: O||
+------------------||Node 65	grouping symbol	( Parent: O||
+------------------||Node 68	V	none Parent: O||
+---------------------||Node 67	S	none Parent: V||
+------------------------||Node 66	user-defined name	y Parent: S||
+------------------||Node 69	grouping symbol	) Parent: O||
+---------||Node 73	grouping symbol	; Parent: C||
+---------||Node 82	I	none Parent: C||
+------------||Node 81	A	none Parent: I||
+---------------||Node 76	T	none Parent: A||
+------------------||Node 75	S	none Parent: T||
+---------------------||Node 74	user-defined name	x Parent: S||
+---------------||Node 77	assignment operator	= Parent: A||
+---------------||Node 80	U	none Parent: A||
+------------------||Node 79	S	none Parent: U||
+---------------------||Node 78	user-defined name	y Parent: S||

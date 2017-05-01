@@ -119,4 +119,8 @@ public class InfoTable
 		}
         return 'u';
     }
+
+    public TableItem get(int i) {
+	    return getItemAt(i);
+    }
 }

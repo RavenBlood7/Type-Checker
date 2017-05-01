@@ -9,6 +9,7 @@ public class TreeNode extends TokenNode {
 	private TreeNode parent;
 	private InfoTable tableEntry;
 	public  String newName;
+	public char type;
 	
 
 	public TreeNode(int number, String tokenClass, String snippet) {

@@ -67,7 +67,6 @@ public class ValueAnalyser {
             postprocessing();
             System.out.println("\nSuccessfully completed value analysis process: ");
             System.out.println("\t writing symbol table to file... ");
-            toFile();
             System.out.println("--------------------------------------------------- ");
         }
         catch (StringException e)
