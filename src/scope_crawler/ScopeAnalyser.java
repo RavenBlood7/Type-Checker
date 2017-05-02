@@ -108,9 +108,14 @@ public class ScopeAnalyser {
                 newScope++;
                 stable.bind(node.getChild(1).getChild(0).snippet, table.getType(node.getChild(1).getChild(0).tokenNo));
                 table.setScope(node.getChild(1).getChild(0).tokenNo, newScope);
-                stable.bind(node.getChild(4).getChild(0).snippet, table.getType(node.getChild(1).getChild(0).tokenNo));
+                stable.bind(node.getChild(4).getChild(0).snippet, table.getType(node.getChild(4).getChild(0).tokenNo));
                 table.setScope(node.getChild(4).getChild(0).tokenNo, newScope);
-                stable.bind(node.getChild(7).getChild(0).snippet, table.getType(node.getChild(1).getChild(0).tokenNo));
+                if (!stable.lookup(node.getChild(6).snippet, table.getType(node.getChild(6).tokenNo)))
+                {
+                    stable.bind(node.getChild(6).getChild(0).snippet, table.getType(node.getChild(6).getChild(0).tokenNo));
+                    table.setScope(node.getChild(6).getChild(0).tokenNo, newScope);
+                }
+                stable.bind(node.getChild(7).getChild(0).snippet, table.getType(node.getChild(7).getChild(0).tokenNo));
                 table.setScope(node.getChild(7).getChild(0).tokenNo, newScope);
                 stable.exit();
                 recursiveScope(node.getChild(10), table, curScope);
@@ -121,10 +126,12 @@ public class ScopeAnalyser {
         // N
         if (node.tokenClass.equals("N") || node.tokenClass.equals("S"))
         {
-            if (!stable.lookup(node.getChild(0).snippet, table.getType(node.getChild(0).tokenNo)))
-            {
-                throw new StringException("undeclared variable: " + node.getChild(0).snippet);
-            }
+//            if (!stable.lookup(node.getChild(0).snippet, table.getType(node.getChild(0).tokenNo)))
+  //          {
+    //            throw new StringException("undeclared variable: " + node.getChild(0).snippet);
+      //      }
+            stable.bind(node.getChild(0).snippet, table.getType(node.getChild(0).tokenNo));
+            table.setScope(node.getChild(0).tokenNo, newScope);
         }
 
         // R
@@ -137,6 +144,7 @@ public class ScopeAnalyser {
             else
             {
                 stable.bind(node.getChild(1).snippet, table.getType(node.getChild(1).tokenNo));
+                table.setScope(node.getChild(1).tokenNo, curScope);
                 stable.enter();
                 newScope++;
                 recursiveScope(node.getChild(2), table, newScope);
@@ -147,10 +155,12 @@ public class ScopeAnalyser {
         // Y
         if (node.tokenClass.equals("Y"))
         {
-            if (!stable.lookup(node.getChild(0).snippet, table.getType(node.getChild(0).tokenNo)))
-            {
-                throw new StringException("calling undefined proc: " + node.getChild(0).snippet);
-            }
+            stable.bind(node.getChild(0).snippet, table.getType(node.getChild(0).tokenNo));
+            table.setScope(node.getChild(0).tokenNo, curScope);
+          // if (!stable.lookup(node.getChild(0).snippet, table.getType(node.getChild(0).tokenNo)))
+          //  {
+          //      throw new StringException("calling undefined proc: " + node.getChild(0).snippet);
+          //  }
         }
 
     }
