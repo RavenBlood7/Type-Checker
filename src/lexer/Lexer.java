@@ -140,7 +140,7 @@ public class Lexer
 
 			FileWriter fw = new FileWriter(file);
 			fw.write(toString());
-			System.out.println("Lexical Analysis output saved to file '"+ file +"\n---------------------------------------------'");
+			System.out.println("Lexical Analysis output saved to file '"+ file +"\n---------------------------------------------");
 			scan.close();
 			fw.close();		
 		}

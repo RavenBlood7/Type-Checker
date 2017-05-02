@@ -170,7 +170,7 @@ public class Parser
 	
 	public Boolean parse()
 	{
-		System.out.println("Starting parsing process: ");
+		System.out.println("Starting parsing process:\n---------------------------------------------");
 		
 		lexerList = new TokenList("lexeroutput"); 		
 		list = convertToParseFormat(lexerList);
@@ -208,7 +208,7 @@ public class Parser
 			
 			if (tempString == null)
 			{
-				System.out.println("Syntax error: " + curSymbol);
+				System.out.println("Syntax error: " + curSymbol +"\n---------------------------------------------");
 				return false;
 				//break;
 			}

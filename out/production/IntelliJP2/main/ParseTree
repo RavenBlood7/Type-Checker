@@ -1,42 +1,96 @@
-||Node 85	Q	none Parent: nun||
----||Node 84	P	none Parent: Q||
-------||Node 83	C	none Parent: P||
----------||Node 73	C	none Parent: C||
-------------||Node 63	C	none Parent: C||
----------------||Node 52	C	none Parent: C||
-------------------||Node 51	I	none Parent: C||
----------------------||Node 50	O	none Parent: I||
-------------------------||Node 44	keyword	input Parent: O||
-------------------------||Node 45	grouping symbol	( Parent: O||
-------------------------||Node 48	V	none Parent: O||
----------------------------||Node 47	S	none Parent: V||
-------------------------------||Node 46	user-defined name	x Parent: S||
-------------------------||Node 49	grouping symbol	) Parent: O||
----------------||Node 53	grouping symbol	; Parent: C||
----------------||Node 62	I	none Parent: C||
-------------------||Node 61	A	none Parent: I||
----------------------||Node 56	T	none Parent: A||
-------------------------||Node 55	S	none Parent: T||
----------------------------||Node 54	user-defined name	num Parent: S||
----------------------||Node 57	assignment operator	= Parent: A||
----------------------||Node 60	U	none Parent: A||
-------------------------||Node 59	S	none Parent: U||
----------------------------||Node 58	user-defined name	x Parent: S||
-------------||Node 64	grouping symbol	; Parent: C||
-------------||Node 72	I	none Parent: C||
----------------||Node 71	A	none Parent: I||
-------------------||Node 67	T	none Parent: A||
----------------------||Node 66	S	none Parent: T||
-------------------------||Node 65	user-defined name	res Parent: S||
-------------------||Node 68	assignment operator	= Parent: A||
-------------------||Node 70	U	none Parent: A||
----------------------||Node 69	short string	"unknown" Parent: U||
----------||Node 74	grouping symbol	; Parent: C||
----------||Node 82	I	none Parent: C||
-------------||Node 81	A	none Parent: I||
----------------||Node 77	T	none Parent: A||
-------------------||Node 76	S	none Parent: T||
----------------------||Node 75	user-defined name	str Parent: S||
----------------||Node 78	assignment operator	= Parent: A||
----------------||Node 80	U	none Parent: A||
-------------------||Node 79	short string	"even" Parent: U||
+||Node 193	Q	none Parent: nun||
+---||Node 192	P	none Parent: Q||
+------||Node 191	C	none Parent: P||
+---------||Node 187	C	none Parent: C||
+------------||Node 182	C	none Parent: C||
+---------------||Node 171	C	none Parent: C||
+------------------||Node 161	C	none Parent: C||
+---------------------||Node 122	C	none Parent: C||
+------------------------||Node 121	I	none Parent: C||
+---------------------------||Node 120	Z	none Parent: I||
+------------------------------||Node 98	keyword	while Parent: Z||
+------------------------------||Node 99	grouping symbol	( Parent: Z||
+------------------------------||Node 107	B	none Parent: Z||
+---------------------------------||Node 100	grouping symbol	( Parent: B||
+---------------------------------||Node 102	N	none Parent: B||
+------------------------------------||Node 101	user-defined name	x Parent: N||
+---------------------------------||Node 103	comparison symbol	< Parent: B||
+---------------------------------||Node 105	N	none Parent: B||
+------------------------------------||Node 104	user-defined name	y Parent: N||
+---------------------------------||Node 106	grouping symbol	) Parent: B||
+------------------------------||Node 108	grouping symbol	) Parent: Z||
+------------------------------||Node 109	grouping symbol	{ Parent: Z||
+------------------------------||Node 118	C	none Parent: Z||
+---------------------------------||Node 117	I	none Parent: C||
+------------------------------------||Node 116	O	none Parent: I||
+---------------------------------------||Node 110	keyword	output Parent: O||
+---------------------------------------||Node 111	grouping symbol	( Parent: O||
+---------------------------------------||Node 114	V	none Parent: O||
+------------------------------------------||Node 113	S	none Parent: V||
+---------------------------------------------||Node 112	user-defined name	r Parent: S||
+---------------------------------------||Node 115	grouping symbol	) Parent: O||
+------------------------------||Node 119	grouping symbol	} Parent: Z||
+---------------------||Node 123	grouping symbol	; Parent: C||
+---------------------||Node 160	I	none Parent: C||
+------------------------||Node 159	Z	none Parent: I||
+---------------------------||Node 124	keyword	for Parent: Z||
+---------------------------||Node 125	grouping symbol	( Parent: Z||
+---------------------------||Node 127	N	none Parent: Z||
+------------------------------||Node 126	user-defined name	c Parent: N||
+---------------------------||Node 128	assignment operator	= Parent: Z||
+---------------------------||Node 129	integer	0 Parent: Z||
+---------------------------||Node 130	grouping symbol	; Parent: Z||
+---------------------------||Node 132	N	none Parent: Z||
+------------------------------||Node 131	user-defined name	c Parent: N||
+---------------------------||Node 133	comparison symbol	< Parent: Z||
+---------------------------||Node 135	N	none Parent: Z||
+------------------------------||Node 134	user-defined name	c Parent: N||
+---------------------------||Node 136	grouping symbol	; Parent: Z||
+---------------------------||Node 138	N	none Parent: Z||
+------------------------------||Node 137	user-defined name	c Parent: N||
+---------------------------||Node 139	assignment operator	= Parent: Z||
+---------------------------||Node 140	keyword	add Parent: Z||
+---------------------------||Node 141	grouping symbol	( Parent: Z||
+---------------------------||Node 143	N	none Parent: Z||
+------------------------------||Node 142	user-defined name	c Parent: N||
+---------------------------||Node 144	grouping symbol	, Parent: Z||
+---------------------------||Node 145	integer	1 Parent: Z||
+---------------------------||Node 146	grouping symbol	) Parent: Z||
+---------------------------||Node 147	grouping symbol	) Parent: Z||
+---------------------------||Node 148	grouping symbol	{ Parent: Z||
+---------------------------||Node 157	C	none Parent: Z||
+------------------------------||Node 156	I	none Parent: C||
+---------------------------------||Node 155	O	none Parent: I||
+------------------------------------||Node 149	keyword	output Parent: O||
+------------------------------------||Node 150	grouping symbol	( Parent: O||
+------------------------------------||Node 153	V	none Parent: O||
+---------------------------------------||Node 152	S	none Parent: V||
+------------------------------------------||Node 151	user-defined name	f Parent: S||
+------------------------------------||Node 154	grouping symbol	) Parent: O||
+---------------------------||Node 158	grouping symbol	} Parent: Z||
+------------------||Node 162	grouping symbol	; Parent: C||
+------------------||Node 170	I	none Parent: C||
+---------------------||Node 169	A	none Parent: I||
+------------------------||Node 165	T	none Parent: A||
+---------------------------||Node 164	S	none Parent: T||
+------------------------------||Node 163	user-defined name	y Parent: S||
+------------------------||Node 166	assignment operator	= Parent: A||
+------------------------||Node 168	U	none Parent: A||
+---------------------------||Node 167	short string	"hello" Parent: U||
+---------------||Node 172	grouping symbol	; Parent: C||
+---------------||Node 181	I	none Parent: C||
+------------------||Node 180	A	none Parent: I||
+---------------------||Node 175	T	none Parent: A||
+------------------------||Node 174	S	none Parent: T||
+---------------------------||Node 173	user-defined name	z Parent: S||
+---------------------||Node 176	assignment operator	= Parent: A||
+---------------------||Node 179	U	none Parent: A||
+------------------------||Node 178	S	none Parent: U||
+---------------------------||Node 177	user-defined name	y Parent: S||
+------------||Node 183	grouping symbol	; Parent: C||
+------------||Node 186	I	none Parent: C||
+---------------||Node 185	Y	none Parent: I||
+------------------||Node 184	user-defined name	procedurecall Parent: Y||
+---------||Node 188	grouping symbol	; Parent: C||
+---------||Node 190	I	none Parent: C||
+------------||Node 189	keyword	halt Parent: I||

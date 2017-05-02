@@ -6,7 +6,16 @@ public class InfoTable
 	private ArrayList<TableItem> symbols = new ArrayList<TableItem>();
 
 	public int index(TableItem item){
-		return symbols.indexOf(item);
+		int index = -1;
+		int i = 0;
+		for(TableItem symbol: symbols){
+			if(symbol.tokenNo == item.tokenNo){
+				index = i;
+				break;
+			}
+			i++;
+		}
+		return index;
 	}
 
 	public void insert(int ID, String tokenClass, String snippet){

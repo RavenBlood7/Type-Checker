@@ -1,0 +1,224 @@
+Node [141]
+|	Class: Q
+|	Snippet: none
+|	Type: Well-Typed
+|	Children:
+	Node [140]
+	|	Class: P
+	|	Snippet: none
+	|	Type: Well-Typed
+	|	Children:
+		Node [139]
+		|	Class: C
+		|	Snippet: none
+		|	Type: Well-Typed
+		|	Children:
+			Node [135]
+			|	Class: C
+			|	Snippet: none
+			|	Type: Well-Typed
+			|	Children:
+				Node [96]
+				|	Class: C
+				|	Snippet: none
+				|	Type: Well-Typed
+				|	Children:
+					Node [95]
+					|	Class: I
+					|	Snippet: none
+					|	Type: Well-Typed
+					|	Children:
+						Node [94]
+						|	Class: Z
+						|	Snippet: none
+						|	Type: Well-Typed
+						|	Children:
+							Node [72]
+							|	Class: keyword
+							|	Snippet: while
+							|	Type: Keyword
+							Node [81]
+							|	Class: B
+							|	Snippet: none
+							|	Type: Boolean
+							|	Children:
+								Node [76]
+								|	Class: N
+								|	Snippet: none
+								|	Type: Number
+								|	Children:
+									Node [75]
+									|	Class: user-defined name
+									|	Snippet: x
+									|	Type: Number
+								Node [77]
+								|	Class: comparison symbol
+								|	Snippet: <
+								|	Type: Keyword
+								Node [79]
+								|	Class: N
+								|	Snippet: none
+								|	Type: Number
+								|	Children:
+									Node [78]
+									|	Class: user-defined name
+									|	Snippet: y
+									|	Type: Number
+							Node [92]
+							|	Class: C
+							|	Snippet: none
+							|	Type: Well-Typed
+							|	Children:
+								Node [91]
+								|	Class: I
+								|	Snippet: none
+								|	Type: Well-Typed
+								|	Children:
+									Node [90]
+									|	Class: O
+									|	Snippet: none
+									|	Type: Well-Typed
+									|	Children:
+										Node [84]
+										|	Class: keyword
+										|	Snippet: output
+										|	Type: Keyword
+										Node [88]
+										|	Class: V
+										|	Snippet: none
+										|	Type: Output
+										|	Children:
+											Node [87]
+											|	Class: S
+											|	Snippet: none
+											|	Type: String
+											|	Children:
+												Node [86]
+												|	Class: user-defined name
+												|	Snippet: r
+												|	Type: String
+				Node [134]
+				|	Class: I
+				|	Snippet: none
+				|	Type: Well-Typed
+				|	Children:
+					Node [133]
+					|	Class: Z
+					|	Snippet: none
+					|	Type: Well-Typed
+					|	Children:
+						Node [98]
+						|	Class: keyword
+						|	Snippet: for
+						|	Type: Keyword
+						Node [101]
+						|	Class: N
+						|	Snippet: none
+						|	Type: Number
+						|	Children:
+							Node [100]
+							|	Class: user-defined name
+							|	Snippet: c
+							|	Type: Number
+						Node [102]
+						|	Class: assignment operator
+						|	Snippet: =
+						|	Type: Keyword
+						Node [103]
+						|	Class: integer
+						|	Snippet: 0
+						|	Type: Number
+						Node [106]
+						|	Class: N
+						|	Snippet: none
+						|	Type: Number
+						|	Children:
+							Node [105]
+							|	Class: user-defined name
+							|	Snippet: c
+							|	Type: Number
+						Node [107]
+						|	Class: comparison symbol
+						|	Snippet: <
+						|	Type: Keyword
+						Node [109]
+						|	Class: N
+						|	Snippet: none
+						|	Type: Number
+						|	Children:
+							Node [108]
+							|	Class: user-defined name
+							|	Snippet: c
+							|	Type: Number
+						Node [112]
+						|	Class: N
+						|	Snippet: none
+						|	Type: Number
+						|	Children:
+							Node [111]
+							|	Class: user-defined name
+							|	Snippet: c
+							|	Type: Number
+						Node [113]
+						|	Class: assignment operator
+						|	Snippet: =
+						|	Type: Keyword
+						Node [114]
+						|	Class: keyword
+						|	Snippet: add
+						|	Type: Keyword
+						Node [117]
+						|	Class: N
+						|	Snippet: none
+						|	Type: Number
+						|	Children:
+							Node [116]
+							|	Class: user-defined name
+							|	Snippet: c
+							|	Type: Number
+						Node [119]
+						|	Class: integer
+						|	Snippet: 1
+						|	Type: Number
+						Node [131]
+						|	Class: C
+						|	Snippet: none
+						|	Type: Well-Typed
+						|	Children:
+							Node [130]
+							|	Class: I
+							|	Snippet: none
+							|	Type: Well-Typed
+							|	Children:
+								Node [129]
+								|	Class: O
+								|	Snippet: none
+								|	Type: Well-Typed
+								|	Children:
+									Node [123]
+									|	Class: keyword
+									|	Snippet: output
+									|	Type: Keyword
+									Node [127]
+									|	Class: V
+									|	Snippet: none
+									|	Type: Output
+									|	Children:
+										Node [126]
+										|	Class: S
+										|	Snippet: none
+										|	Type: String
+										|	Children:
+											Node [125]
+											|	Class: user-defined name
+											|	Snippet: f
+											|	Type: String
+			Node [138]
+			|	Class: I
+			|	Snippet: none
+			|	Type: Well-Typed
+			|	Children:
+				Node [137]
+				|	Class: keyword
+				|	Snippet: halt
+				|	Type: Keyword

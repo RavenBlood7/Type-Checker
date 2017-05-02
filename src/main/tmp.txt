@@ -1,4 +1,10 @@
-input(x);
-num = x;
- res =     "unknown";
- str = "even"
+while ((x<y)) {
+    output(r)
+};
+for (c = 0; c < c; c = add(c, 1)) {
+    output(f)
+};
+y = "hello";
+z = y;
+procedurecall;
+halt

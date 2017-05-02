@@ -1,16 +1,52 @@
-0	keyword	input
+0	keyword	while
 1	grouping symbol	(
-2	user-defined name	x
-3	grouping symbol	)
-4	grouping symbol	;
-5	user-defined name	num
-6	assignment operator	=
-7	user-defined name	x
-8	grouping symbol	;
-9	user-defined name	res
-10	assignment operator	=
-11	short string	"unknown"
-12	grouping symbol	;
-13	user-defined name	str
-14	assignment operator	=
-15	short string	"even"
+2	grouping symbol	(
+3	user-defined name	x
+4	comparison symbol	<
+5	user-defined name	y
+6	grouping symbol	)
+7	grouping symbol	)
+8	grouping symbol	{
+9	keyword	output
+10	grouping symbol	(
+11	user-defined name	r
+12	grouping symbol	)
+13	grouping symbol	}
+14	grouping symbol	;
+15	keyword	for
+16	grouping symbol	(
+17	user-defined name	c
+18	assignment operator	=
+19	integer	0
+20	grouping symbol	;
+21	user-defined name	c
+22	comparison symbol	<
+23	user-defined name	c
+24	grouping symbol	;
+25	user-defined name	c
+26	assignment operator	=
+27	keyword	add
+28	grouping symbol	(
+29	user-defined name	c
+30	grouping symbol	,
+31	integer	1
+32	grouping symbol	)
+33	grouping symbol	)
+34	grouping symbol	{
+35	keyword	output
+36	grouping symbol	(
+37	user-defined name	f
+38	grouping symbol	)
+39	grouping symbol	}
+40	grouping symbol	;
+41	user-defined name	y
+42	assignment operator	=
+43	short string	"hello"
+44	grouping symbol	;
+45	user-defined name	z
+46	assignment operator	=
+47	user-defined name	y
+48	grouping symbol	;
+49	user-defined name	procedurecall
+50	grouping symbol	;
+51	keyword	halt
