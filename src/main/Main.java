@@ -5,6 +5,8 @@ import scope_crawler.ScopeAnalyser;
 import type_crawler.TypeChecker;
 import lexer.Lexer;
 import parser.Parser;
+import value_crawler.ValueAnalyser;
+
 import java.io.*;
 
 //here is the main file which we will run on the demo date for typechecking
@@ -29,26 +31,32 @@ public class Main
 				//	prsr.getRoot()
 				//	prsr.getTable()
 				Parser prsr = new Parser();
-				if (prsr.parse())
-				{
+				if (prsr.parse()) {
 					prsr.writeToTreeFile();
 					prsr.writeToPrunedTreeFile();
+
+
+					//The resulting tree and table is then passed to the typechecker
+					//which does the algorithm and displays appropriate messages
+
+					System.out.println("\n\nThe symbol table before typechecker: \n" + prsr.getTable());
+					InfoTable it = prsr.getTable();
+					TypeChecker tc = new TypeChecker();
+					tc.toFile(it);
+					tc.doTypeChecking(prsr.getRoot(), prsr.getTable());
+					tc.toFile(it);
+					System.out.println("\n\nThe symbol table after typechecker: \n" + prsr.getTable());
+
+					//The resulting tree is then also checked for proper scope
+					ScopeAnalyser sa = new ScopeAnalyser();
+					sa.doScopeAnalysis(prsr.getRoot(), prsr.getTable());
+					System.out.println("\n\nThe symbol table after scope analyser: \n" + prsr.getTable());
+
+					//value analyser
+					ValueAnalyser va = new ValueAnalyser();
+					va.doValueAnalysis(prsr.getRoot(), prsr.getTable());
+					//System.out.println("\n\nThe symbol table after scope analyser: \n" + prsr.getTable());
 				}
-
-				//The resulting tree and table is then passed to the typechecker
-				//which does the algorithm and displays appropriate messages
-
-                System.out.println("\n\nThe symbol table before typechecker: \n" + prsr.getTable());
-				InfoTable it = prsr.getTable();
-				TypeChecker tc = new TypeChecker();
-				tc.toFile(it);
-				tc.doTypeChecking(prsr.getRoot(), prsr.getTable());
-				tc.toFile(it);
-                System.out.println("\n\nThe symbol table after typechecker: \n" + prsr.getTable());
-
-				//The resulting tree is then also checked for proper scope
-				//ScopeAnalyser sa = new ScopeAnalyser();
-				//sa.doScopeAnalysis(prsr.getRoot(), it);
 
 				//System.out.println("\n\nThe symbol table after scope analysis: \n" + prsr.getTable());
 			}

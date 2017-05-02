@@ -81,7 +81,7 @@ public class TypeChecker {
 		if(node == null){ return; }
 
 		// Number Syntactic Category, Symbol: b
-		if(node.tokenClass.equals("number")){
+		if(node.tokenClass.equals("integer") || node.tokenClass.equals("number")){
 			if(node.type == '\0'){
 				node.type = validTypes[3];
 				table.setType(findIndex(node, table), validTypes[3]);
@@ -164,6 +164,8 @@ public class TypeChecker {
 				visitAST(node.getChild(1), table);
 				visitAST(node.getChild(2), table);
 				if(node.getChild(1).type == validTypes[3] && node.getChild(2).type == validTypes[3]){
+					node.getChild(0).type = validTypes[8]; // number
+					table.setType(findIndex(node.getChild(0), table), validTypes[8]);
 					node.type = validTypes[3]; // number
 					table.setType(findIndex(node, table), validTypes[3]);
 				} else {
@@ -179,14 +181,52 @@ public class TypeChecker {
 					//visitAST(node.getChild(0), table);
 					visitAST(node.getChild(1), table);
 					if(node.getChild(1).type == validTypes[6]){
+						node.getChild(0).type = validTypes[8]; // default
+						table.setType(findIndex(node.getChild(0), table), validTypes[8]);
 						node.type = validTypes[6]; // boolean
 						table.setType(findIndex(node, table), validTypes[6]);
 					} else {
 						reportError(node, "Boolean", getTypeOf(node.getChild(1).type));
 					}
-				} else if (node.childrenSize() == 3){ // eq, and, or, <, >
-					visitAST(node.getChild(0), table);
-					visitAST(node.getChild(2), table);
+				} else if (node.childrenSize() == 3) { // eq, and, or, <, >
+                    if (node.getChild(0).tokenClass.equals("keyword"))  // eq, and, or
+                    {
+                        visitAST(node.getChild(1), table);
+                        visitAST(node.getChild(2), table);
+                        if (node.getChild(0).snippet.equals("eq")) {
+                            if (node.getChild(1).type != '\0' &&
+                                    node.getChild(1).type == node.getChild(2).type) {
+                                node.getChild(0).type = validTypes[8]; // default
+                                table.setType(findIndex(node.getChild(0), table), validTypes[8]);
+                                node.type = validTypes[6]; // boolean
+                                table.setType(findIndex(node, table), validTypes[6]);
+                            } else {
+                                reportError(node, "Boolean", getTypeOf(node.getChild(1).type));
+                            }
+                        } else {
+                            if (node.getChild(1).type == 'b' && node.getChild(2).type == 'b') {
+                                node.getChild(0).type = validTypes[8]; // default
+                                table.setType(findIndex(node.getChild(0), table), validTypes[8]);
+                                node.type = validTypes[6]; // boolean
+                                table.setType(findIndex(node, table), validTypes[6]);
+                            } else {
+                                reportError(node, "Boolean", getTypeOf(node.getChild(1).type));
+                            }
+                        }
+                    } else // < , >
+                    {
+                        visitAST(node.getChild(0), table);
+                        visitAST(node.getChild(2), table);
+                        if (node.getChild(0).type == 'n' && node.getChild(2).type == 'n') {
+                            node.getChild(1).type = validTypes[8]; // default
+                            table.setType(findIndex(node.getChild(1), table), validTypes[8]);
+                            node.type = validTypes[6]; // boolean
+                            table.setType(findIndex(node, table), validTypes[6]);
+                        }
+                    }
+                }
+
+				/*	visitAST(node.getChild(2), table);
 					if(node.getChild(1).type == validTypes[4] && node.getChild(2).type == validTypes[4]){ // VAR
 						node.type = validTypes[6]; // boolean
 						table.setType(findIndex(node, table), validTypes[6]);
@@ -204,9 +244,10 @@ public class TypeChecker {
 						else
 							reportError(node, "", "");
 					}
+
 				} else {
 					System.out.println("Boolean Expression Error: Too many arguments");
-				}
+				}*/
 			}
 		}
 
@@ -217,6 +258,10 @@ public class TypeChecker {
 				visitAST(node.getChild(3), table); // code
 				if(node.childrenSize() == 4) {
 			   		if(node.getChild(1).type == validTypes[6] && node.getChild(3).type == validTypes[1]){
+				   		node.getChild(0).type = validTypes[8]; // default
+				   		table.setType(findIndex(node.getChild(0), table), validTypes[8]);
+				   		node.getChild(2).type = validTypes[8]; // default
+				   		table.setType(findIndex(node.getChild(2), table), validTypes[8]);
 				   		node.type = validTypes[1]; // well-typed
 				   		table.setType(findIndex(node, table), validTypes[1]);
 			   		} else {
@@ -232,6 +277,12 @@ public class TypeChecker {
 					if(node.getChild(1).type == validTypes[6] &&
 						node.getChild(3).type == validTypes[1] &&
 						node.getChild(5).type == validTypes[1]){
+                        node.getChild(0).type = validTypes[8]; // default
+                        table.setType(findIndex(node.getChild(0), table), validTypes[8]);
+                        node.getChild(2).type = validTypes[8]; // default
+                        table.setType(findIndex(node.getChild(2), table), validTypes[8]);
+                        node.getChild(4).type = validTypes[8]; // default
+                        table.setType(findIndex(node.getChild(4), table), validTypes[8]);
 						node.type = validTypes[1]; // well-typed
 						table.setType(findIndex(node, table), validTypes[1]);
 					} else {
@@ -254,6 +305,13 @@ public class TypeChecker {
 		if(node.tokenClass.equals("T") || node.tokenClass.equals("U")){
 			if(node.type == '\0'){
 				visitAST(node.getChild(0), table);
+				if (node.getChild(0).tokenClass.equals("X"))
+                {
+                    if (node.getChild(0).type == 'w') {
+                        node.type = validTypes[1]; // well-typed
+                        table.setType(findIndex(node, table), validTypes[1]);
+                    }
+                }
 				if(node.getChild(0).type == validTypes[5]){ // SVAR
 					node.type = validTypes[1]; // well-typed
 					table.setType(findIndex(node, table), validTypes[1]);
@@ -266,15 +324,37 @@ public class TypeChecker {
 			}
 		}
 
+		// Expression, Symbol: X
+		if(node.tokenClass.equals("X")){
+			if(node.type == '\0') {
+                visitAST(node.getChild(0), table);
+                if (node.getChild(0).type == 'n') {
+                    node.type = validTypes[3]; // number
+                    table.setType(findIndex(node, table), validTypes[3]);
+                }else {
+                    reportError(node, "Number", getTypeOf(node.getChild(0).type));
+                }
+            }
+		}
+
 		// Assign Syntactic Category, Symbol: A
 		if(node.tokenClass.equals("A")){
 			if(node.type == '\0'){
 				visitAST(node.getChild(0), table);
+				node.getChild(1).type = validTypes[8];
+				table.setType(findIndex(node.getChild(1), table), validTypes[8]);
 				visitAST(node.getChild(2), table);
-				if(node.getChild(0).type == validTypes[5] && node.getChild(2).type == validTypes[5]){
+				if (node.getChild(2).getChild(0).tokenClass.equals("X")){
+				    if (node.getChild(2).getChild(0).type == 'n')
+                    {
+                        node.type = validTypes[1];
+                        table.setType(findIndex(node, table), validTypes[1]);
+                    }
+                }else
+				if(node.getChild(0).getChild(0).type == validTypes[5] && node.getChild(2).getChild(0).type == validTypes[5]){
 					node.type = validTypes[1];
 					table.setType(findIndex(node, table), validTypes[1]);
-				} else if(node.getChild(0).type == validTypes[3] && node.getChild(2).type == validTypes[3]){
+				} else if(node.getChild(0).getChild(0).type == validTypes[3] && node.getChild(0).getChild(2).type == validTypes[3]){
 					node.type = validTypes[1];
 					table.setType(findIndex(node, table), validTypes[1]);
 				} else {
@@ -285,11 +365,13 @@ public class TypeChecker {
 
 		// Conditional Loop Syntactic Category, Symbol: Z
 		if(node.tokenClass.equals("Z")){
-			if(node.type != '\0'){
+			if(node.type == '\0'){
 				if(node.childrenSize() == 3){
 					visitAST(node.getChild(1), table);
 					visitAST(node.getChild(2), table);
 					if(node.getChild(1).type == validTypes[6] && node.getChild(2).type == validTypes[1]){
+						node.getChild(0).type = validTypes[8]; // default
+				   		table.setType(findIndex(node.getChild(0), table), validTypes[8]);
 						node.type = validTypes[1]; // well-typed
 				   		table.setType(findIndex(node, table), validTypes[1]);
 					} else {
@@ -300,7 +382,7 @@ public class TypeChecker {
 						else
 							reportError(node, "", "");
 					}
-				} else if (node.childrenSize() == 13){
+				} else if (node.childrenSize() == 13){ // for loop
 					Boolean isOk = true;
 					visitAST(node.getChild(1), table);
 					visitAST(node.getChild(3), table);
@@ -361,6 +443,16 @@ public class TypeChecker {
 					}
 
 					if(isOk){
+						node.getChild(0).type = validTypes[8]; // default
+				   		table.setType(findIndex(node.getChild(0), table), validTypes[8]);
+						node.getChild(2).type = validTypes[8]; // default
+				   		table.setType(findIndex(node.getChild(2), table), validTypes[8]);
+						node.getChild(5).type = validTypes[8]; // default
+				   		table.setType(findIndex(node.getChild(5), table), validTypes[8]);
+						node.getChild(8).type = validTypes[8]; // default
+				   		table.setType(findIndex(node.getChild(8), table), validTypes[8]);
+						node.getChild(9).type = validTypes[8]; // default
+				   		table.setType(findIndex(node.getChild(9), table), validTypes[8]);
 						node.type = validTypes[1]; // well-typed
 				   		table.setType(findIndex(node, table), validTypes[1]);
 					} else {
@@ -434,14 +526,13 @@ public class TypeChecker {
 
 		// R Syntactic Category : PROC
 		if(node.tokenClass.equals("R")){
-			//enter symbol table
 			visitAST(node.getChild(2), table);
-			//exit symbol table
 			if(node.type == '\0' && node.getChild(1).type == '\0'
 				&& node.getChild(2).type == 'w'){
 				node.getChild(1).type = validTypes[2];
 				table.setType(findIndex(node.getChild(1), table), validTypes[2]);
-				//perhaps bind in symbol table
+				node.getChild(0).type = validTypes[8];
+				table.setType(findIndex(node.getChild(0), table), validTypes[8]);
 				node.type = validTypes[1];
 				table.setType(findIndex(node, table), validTypes[1]);
 			}
@@ -512,8 +603,8 @@ public class TypeChecker {
 		if(node.tokenClass.equals("Y")){
 			if (node.childrenSize() > 0){
 				if (node.type == '\0'){
-					node.getChild(1).type = validTypes[3];
-					table.setType(findIndex(node.getChild(1), table), validTypes[3]);
+					node.getChild(0).type = validTypes[2];
+					table.setType(findIndex(node.getChild(0), table), validTypes[2]);
 					node.type = validTypes[1];
 					table.setType(findIndex(node, table), validTypes[1]);
 				}

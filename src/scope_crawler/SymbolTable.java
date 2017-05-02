@@ -24,7 +24,7 @@ public class SymbolTable
 	
 	public void bind(String name, char type)
 	{
-		stack.push(new STNode(name, type));
+		if (!lookup(name, type))stack.push(new STNode(name, type));
 	}
 	
 	public boolean lookup(String name, char type)

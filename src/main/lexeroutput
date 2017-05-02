@@ -1,18 +1,7 @@
-0	keyword	input
-1	grouping symbol	(
-2	user-defined name	x
-3	grouping symbol	)
-4	grouping symbol	;
-5	keyword	output
-6	grouping symbol	(
-7	user-defined name	x
-8	grouping symbol	)
-9	grouping symbol	;
-10	keyword	input
-11	grouping symbol	(
-12	user-defined name	y
-13	grouping symbol	)
-14	grouping symbol	;
-15	user-defined name	x
-16	assignment operator	=
-17	user-defined name	y
+0	user-defined name	y
+1	assignment operator	=
+2	integer	2
+3	grouping symbol	;
+4	user-defined name	x
+5	assignment operator	=
+6	user-defined name	y

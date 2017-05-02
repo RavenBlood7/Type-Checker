@@ -45,26 +45,28 @@ public class InfoTable
 	public void setScope(int ID, int scope)
 	{
 		try {
-			TableItem item = symbols.get(ID);
-			item.scope = scope;
-		} catch (IndexOutOfBoundsException e){
+			for (int i = 0; i < symbols.size(); i++) {
+				if (symbols.get(i).tokenNo == ID)
+					symbols.get(i).scope = scope;
+			}
+
+		} catch (IndexOutOfBoundsException e) {
 			System.out.println("Error: Ooops..failed to set type.\nReason: IndexOutOfBoundsException");
 		}
 	}
 
 	public int getScope(int ID)
 	{
-		try {
-			TableItem item = symbols.get(ID);
-			if (item == null) {
-				return '\0';
-			} else {
-				return item.scope;
+			try {
+				for (int i = 0; i < symbols.size(); i++) {
+					if (symbols.get(i).tokenNo == ID)
+						return symbols.get(i).scope;
+				}
+
+			} catch (IndexOutOfBoundsException e) {
+				System.out.println("Error: Ooops..failed to set type.\nReason: IndexOutOfBoundsException");
 			}
-		} catch (IndexOutOfBoundsException e){
-			System.out.println("Error: Ooops..failed to get the type\nReason: IndexOutOfBoundsException");
-			return '\0';
-		}
+			return -1;
 	}
 
 	public String toString()
@@ -122,5 +124,30 @@ public class InfoTable
 
     public TableItem get(int i) {
 	    return getItemAt(i);
+    }
+
+    public char getType2(int tokenNo) {
+        try {
+            for (int i = 0; i < symbols.size(); i++) {
+                if (symbols.get(i).tokenNo == tokenNo)
+                    return symbols.get(i).type;
+            }
+
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Error: Ooops..failed to set type.\nReason: IndexOutOfBoundsException");
+        }
+        return '\0';
+    }
+
+    public void setType2(int tokenNo, char type) {
+        try {
+            for (int i = 0; i < symbols.size(); i++) {
+                if (symbols.get(i).tokenNo == tokenNo)
+                    symbols.get(i).type = type;
+            }
+
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Error: Ooops..failed to set type.\nReason: IndexOutOfBoundsException");
+        }
     }
 }

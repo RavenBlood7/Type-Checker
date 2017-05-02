@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class ValueAnalyser {
     InfoTable myTable;
-    ArrayList<TreeNode> procStack;
+    ArrayList<TreeNode> procStack = new ArrayList<TreeNode>();
 
 
     private class StringException extends Throwable
@@ -62,6 +62,7 @@ public class ValueAnalyser {
         {
             System.out.println("\nStarting value analysis process: ");
             System.out.println("--------------------------------------------------- ");
+            convertAllNames(table);
             preprocessing();
             recursiveValue(node);
             postprocessing();

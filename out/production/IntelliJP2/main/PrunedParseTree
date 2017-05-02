@@ -1,33 +1,22 @@
-||Node 85	Q	none Parent: nun||
----||Node 84	P	none Parent: Q||
-------||Node 83	C	none Parent: P||
----------||Node 72	C	none Parent: C||
-------------||Node 62	C	none Parent: C||
----------------||Node 52	C	none Parent: C||
-------------------||Node 51	I	none Parent: C||
----------------------||Node 50	O	none Parent: I||
-------------------------||Node 44	keyword	input Parent: O||
-------------------------||Node 48	V	none Parent: O||
----------------------------||Node 47	S	none Parent: V||
-------------------------------||Node 46	user-defined name	x Parent: S||
----------------||Node 61	I	none Parent: C||
-------------------||Node 60	O	none Parent: I||
----------------------||Node 54	keyword	output Parent: O||
----------------------||Node 58	V	none Parent: O||
-------------------------||Node 57	S	none Parent: V||
----------------------------||Node 56	user-defined name	x Parent: S||
-------------||Node 71	I	none Parent: C||
----------------||Node 70	O	none Parent: I||
-------------------||Node 64	keyword	input Parent: O||
-------------------||Node 68	V	none Parent: O||
----------------------||Node 67	S	none Parent: V||
-------------------------||Node 66	user-defined name	y Parent: S||
----------||Node 82	I	none Parent: C||
-------------||Node 81	A	none Parent: I||
----------------||Node 76	T	none Parent: A||
-------------------||Node 75	S	none Parent: T||
----------------------||Node 74	user-defined name	x Parent: S||
----------------||Node 77	assignment operator	= Parent: A||
----------------||Node 80	U	none Parent: A||
-------------------||Node 79	S	none Parent: U||
----------------------||Node 78	user-defined name	y Parent: S||
+||Node 47	Q	none Parent: nun||
+---||Node 46	P	none Parent: Q||
+------||Node 45	C	none Parent: P||
+---------||Node 34	C	none Parent: C||
+------------||Node 33	I	none Parent: C||
+---------------||Node 32	A	none Parent: I||
+------------------||Node 27	T	none Parent: A||
+---------------------||Node 26	S	none Parent: T||
+------------------------||Node 25	user-defined name	y Parent: S||
+------------------||Node 28	assignment operator	= Parent: A||
+------------------||Node 31	U	none Parent: A||
+---------------------||Node 30	X	none Parent: U||
+------------------------||Node 29	integer	2 Parent: X||
+---------||Node 44	I	none Parent: C||
+------------||Node 43	A	none Parent: I||
+---------------||Node 38	T	none Parent: A||
+------------------||Node 37	S	none Parent: T||
+---------------------||Node 36	user-defined name	x Parent: S||
+---------------||Node 39	assignment operator	= Parent: A||
+---------------||Node 42	U	none Parent: A||
+------------------||Node 41	S	none Parent: U||
+---------------------||Node 40	user-defined name	y Parent: S||

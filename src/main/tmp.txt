@@ -1,4 +1,2 @@
-input(x);
-output(x);
-input(y);
+y = 2;
 x = y
